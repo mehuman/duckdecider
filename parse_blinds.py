@@ -503,15 +503,16 @@ def get_index_html():
       all: unset;
       cursor: pointer;
       display: grid;
-      grid-template-columns: 28px minmax(0, 1fr) minmax(140px, auto);
+      grid-template-columns: 28px minmax(0, 1fr) auto;
       gap: 12px;
       align-items: center;
-      padding: 14px 16px;
+      padding: 14px 20px 14px 16px;
       font-size: 15px;
       color: var(--apple-text);
       width: 100%;
       min-width: 0;
       text-align: left;
+      box-sizing: border-box;
     }
     .blind-header:hover { background: var(--apple-bg-secondary); }
     .blind-rank {
@@ -536,6 +537,7 @@ def get_index_html():
       flex-direction: column;
       gap: 2px;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .blind-metrics strong { color: var(--apple-blue); font-weight: 600; }
     .blind-arrow {
