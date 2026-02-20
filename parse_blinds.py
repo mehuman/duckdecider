@@ -341,31 +341,33 @@ def get_index_html():
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #050816;
-      --bg-elevated: #0b1020;
-      --accent: #4ade80;
-      --accent-soft: rgba(74, 222, 128, 0.12);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --danger: #f97373;
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --accent: #0071e3;
+      --accent-soft: rgba(0, 113, 227, 0.08);
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --border: #d2d2d7;
+      --danger: #ff3b30;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      background: var(--bg);
       color: var(--text);
       display: flex;
       flex-direction: column;
       align-items: stretch;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
     header {
-      padding: 1.5rem clamp(1.5rem, 3vw, 3rem);
-      border-bottom: 1px solid rgba(15,23,42,0.9);
+      padding: 1.75rem clamp(1.75rem, 3vw, 3.5rem);
+      border-bottom: 1px solid rgba(210,210,215,0.8);
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.9), rgba(15,23,42,0.4));
+      background: rgba(245,245,247,0.9);
       position: sticky;
       top: 0;
       z-index: 20;
@@ -381,24 +383,25 @@ def get_index_html():
       justify-content: space-between;
     }
     .pill {
-      padding: 0.15rem 0.6rem;
+      padding: 0.18rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.35);
+      border: 1px solid rgba(210,210,215,0.9);
       font-size: 0.75rem;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      background: rgba(255,255,255,0.9);
     }
     .pill-dot {
       width: 6px; height: 6px; border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 12px rgba(74,222,128,0.7);
+      box-shadow: 0 0 6px rgba(0,113,227,0.6);
     }
     main {
-      padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 2.5rem;
+      padding: 2rem clamp(1.75rem, 4vw, 5rem) 3rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
     .layout {
       display: grid;
@@ -409,60 +412,60 @@ def get_index_html():
       .layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     .panel {
-      background: radial-gradient(circle at top left, rgba(37,99,235,0.2), transparent 60%),
-                  radial-gradient(circle at bottom right, rgba(16,185,129,0.16), transparent 55%),
-                  linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(2,6,23,0.98));
-      border-radius: 1.1rem;
-      border: 1px solid rgba(30,64,175,0.9);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(15,23,42,0.8);
+      background: var(--bg-elevated);
+      border-radius: 1.2rem;
+      border: 1px solid rgba(210,210,215,0.9);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
     .panel-header {
-      padding: 0.95rem 1.1rem 0.8rem;
-      border-bottom: 1px solid rgba(31,41,55,0.95);
+      padding: 0.9rem 1.3rem 0.85rem;
+      border-bottom: 1px solid rgba(229,229,234,0.9);
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 0.75rem;
     }
     .panel-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: #e5e7eb;
+      color: #1d1d1f;
       display: flex;
       align-items: center;
       gap: 0.6rem;
     }
     .panel-title span.badge {
       font-size: 0.7rem;
-      padding: 0.12rem 0.4rem;
+      padding: 0.16rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.45);
+      border: 1px solid rgba(210,210,215,0.9);
       color: var(--muted);
       text-transform: none;
       letter-spacing: 0.04em;
+      background: rgba(245,245,247,0.8);
     }
     .panel-meta { font-size: 0.75rem; color: var(--muted); display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; }
     .panel-meta strong { color: var(--accent); font-weight: 600; }
     .blinds-list {
-      padding: 0.4rem 0.4rem 0.75rem;
+      padding: 0.35rem 0.5rem 0.9rem;
       max-height: 80vh;
       overflow: auto;
       scrollbar-width: thin;
-      scrollbar-color: rgba(148,163,184,0.7) transparent;
+      scrollbar-color: rgba(210,210,215,0.8) transparent;
     }
     .blinds-list::-webkit-scrollbar { width: 6px; }
     .blinds-list::-webkit-scrollbar-track { background: transparent; }
-    .blinds-list::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.55); border-radius: 999px; }
+    .blinds-list::-webkit-scrollbar-thumb { background: rgba(210,210,215,0.9); border-radius: 999px; }
     .blind {
-      border-radius: 0.75rem;
-      border: 1px solid rgba(31,41,55,0.95);
-      background: linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(10,15,30,0.98));
-      margin: 0.3rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0,0,0,0.04);
+      background: var(--bg-elevated);
+      margin: 0.35rem 0.25rem;
       overflow: hidden;
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
     }
     .blind-header {
       all: unset;
@@ -471,12 +474,12 @@ def get_index_html():
       grid-template-columns: auto 1fr auto;
       gap: 0.55rem;
       align-items: center;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.85rem;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.86rem;
       color: var(--text);
     }
     .blind-header:hover {
-      background: radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 60%);
+      background: var(--accent-soft);
     }
     .blind-rank { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.78rem; width: 2.2rem; text-align: right; }
     .blind-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -494,33 +497,33 @@ def get_index_html():
     .blind.open .blind-arrow { transform: rotate(90deg); }
     .blind-panel {
       display: none;
-      padding: 0 0.7rem 0.6rem;
+      padding: 0 0.9rem 0.7rem;
       font-size: 0.78rem;
-      background: radial-gradient(circle at top, rgba(15,118,110,0.32), transparent 55%);
-      border-top: 1px solid rgba(30,64,175,0.6);
+      background: #f5f5f7;
+      border-top: 1px solid rgba(229,229,234,0.9);
     }
     .blind.open .blind-panel { display: block; }
     .daily-meta { display: flex; justify-content: space-between; align-items: baseline; margin: 0.45rem 0 0.25rem; }
     .daily-title { font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem; }
     .daily-summary { font-size: 0.78rem; color: var(--muted); }
     .daily-summary strong { color: var(--accent); }
-    table { width: 100%; border-collapse: collapse; margin-top: 0.3rem; }
-    thead { background: rgba(15,23,42,0.9); }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.45rem; }
+    thead { background: #f5f5f7; }
     th, td { padding: 0.25rem 0.35rem; text-align: right; font-variant-numeric: tabular-nums; }
     th:first-child, td:first-child { text-align: left; }
     td.weather-cell { font-size: 0.72rem; color: var(--muted); }
     th {
       font-size: 0.72rem;
       color: var(--muted);
-      border-bottom: 1px solid rgba(30,64,175,0.8);
+      border-bottom: 1px solid rgba(210,210,215,0.9);
       position: sticky;
       top: 0;
-      background: linear-gradient(to bottom, rgba(15,23,42,1), rgba(15,23,42,0.9));
+      background: #f5f5f7;
       z-index: 1;
     }
-    tbody tr:nth-child(even) td { background: rgba(15,23,42,0.7); }
-    tbody tr:nth-child(odd) td { background: rgba(15,23,42,0.4); }
-    .empty-state { padding: 1rem 1.2rem 1.2rem; font-size: 0.85rem; color: var(--muted); }
+    tbody tr:nth-child(even) td { background: rgba(250,250,252,1); }
+    tbody tr:nth-child(odd) td { background: rgba(245,245,247,1); }
+    .empty-state { padding: 1.1rem 1.3rem 1.3rem; font-size: 0.85rem; color: var(--muted); }
     .empty-state strong { color: var(--danger); }
     .footer-note { margin-top: 0.25rem; font-size: 0.75rem; color: var(--muted); }
   </style>
