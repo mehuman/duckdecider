@@ -503,7 +503,7 @@ def get_index_html():
       all: unset;
       cursor: pointer;
       display: grid;
-      grid-template-columns: 28px 1fr minmax(90px, auto);
+      grid-template-columns: 28px minmax(0, 1fr) minmax(140px, auto);
       gap: 12px;
       align-items: center;
       padding: 14px 16px;
@@ -535,7 +535,7 @@ def get_index_html():
       display: flex;
       flex-direction: column;
       gap: 2px;
-      min-width: 0;
+      white-space: nowrap;
     }
     .blind-metrics strong { color: var(--apple-blue); font-weight: 600; }
     .blind-arrow {
