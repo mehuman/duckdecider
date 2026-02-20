@@ -6,6 +6,7 @@ import pdfplumber
 import re
 from pathlib import Path
 from urllib.request import urlopen
+from urllib.parse import urlencode
 
 
 def parse_page1_summary(text):
@@ -138,6 +139,66 @@ def get_latest_pdf_urls(n: int = 3):
     return result
 
 
+# Sauvie Island approximate coordinates for weather
+WEATHER_LAT = 45.69
+WEATHER_LON = -122.81
+
+
+def _degrees_to_wind_dir(deg):
+    """Convert wind direction in degrees (0-360) to N/NE/E/SE/S/SW/W/NW."""
+    if deg is None:
+        return "—"
+    directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+    idx = round(deg / 45) % 8
+    return directions[idx]
+
+
+def fetch_weather_for_dates(dates):
+    """
+    Fetch historical weather for each date from Open-Meteo Archive API.
+    Returns dict: { "YYYY-MM-DD": { "tempMin", "tempMax", "precipitation", "windDirection" }, ... }
+    """
+    if not dates:
+        return {}
+    dates = sorted(set(dates))
+    start = dates[0]
+    end = dates[-1]
+    params = {
+        "latitude": WEATHER_LAT,
+        "longitude": WEATHER_LON,
+        "start_date": start,
+        "end_date": end,
+        "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,wind_direction_10m_dominant",
+        "temperature_unit": "fahrenheit",
+        "precipitation_unit": "inch",
+        "timezone": "America/Los_Angeles",
+    }
+    url = "https://archive-api.open-meteo.com/v1/archive?" + urlencode(params)
+    result = {}
+    try:
+        with urlopen(url, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"Warning: could not fetch weather: {e}")
+        return result
+    daily = data.get("daily") or {}
+    times = daily.get("time") or []
+    temp_max = daily.get("temperature_2m_max") or []
+    temp_min = daily.get("temperature_2m_min") or []
+    precip = daily.get("precipitation_sum") or []
+    wind_deg = daily.get("wind_direction_10m_dominant") or []
+    for i, t in enumerate(times):
+        if t not in dates:
+            continue
+        result[t] = {
+            "tempMin": round(temp_min[i], 1) if i < len(temp_min) and temp_min[i] is not None else None,
+            "tempMax": round(temp_max[i], 1) if i < len(temp_max) and temp_max[i] is not None else None,
+            "precipitation": round(precip[i], 2) if i < len(precip) and precip[i] is not None else None,
+            "windDirection": _degrees_to_wind_dir(wind_deg[i] if i < len(wind_deg) else None),
+        }
+    return result
+
+
 def download_pdf(url: str, dest: Path):
     """Download a PDF from url to dest if it doesn't already exist."""
     if dest.exists():
@@ -182,6 +243,9 @@ def main():
             day_entry["ducks"] += ducks
 
     dates = sorted(used_dates)
+
+    # Fetch weather for each report date (temperature, rain, wind)
+    weather_by_date = fetch_weather_for_dates(list(dates))
 
     # Build rankings arrays for each side with totals and daily breakdown
     eastside_records = []
@@ -253,6 +317,7 @@ def main():
     data = {
         "source": "latest 3 daily harvest reports from ODFW",
         "dates": dates,
+        "weatherByDate": weather_by_date,
         "eastside": eastside_records,
         "westside": westside_records,
     }
@@ -443,6 +508,7 @@ def get_index_html():
     thead { background: rgba(15,23,42,0.9); }
     th, td { padding: 0.25rem 0.35rem; text-align: right; font-variant-numeric: tabular-nums; }
     th:first-child, td:first-child { text-align: left; }
+    td.weather-cell { font-size: 0.72rem; color: var(--muted); }
     th {
       font-size: 0.72rem;
       color: var(--muted);
@@ -513,14 +579,20 @@ def get_index_html():
       var p = iso.split('-');
       return p[1] + '/' + p[2] + '/' + p[0].slice(2);
     }
+    function formatWeather(w) {
+      if (!w) return { temp: '\u2014', rain: '\u2014', wind: '\u2014' };
+      var temp = (w.tempMin != null && w.tempMax != null) ? w.tempMin + '\u00b0 / ' + w.tempMax + '\u00b0' : '\u2014';
+      var rain = (w.precipitation != null && w.precipitation !== '') ? w.precipitation + ' in' : '\u2014';
+      return { temp: temp, rain: rain, wind: w.windDirection || '\u2014' };
+    }
     function renderAll(data) {
       var dateLabel = (data.dates && data.dates.length) ? data.dates.map(formatDate).join(' \u00b7 ') : 'No dates';
       document.getElementById('east-days').textContent = dateLabel;
       document.getElementById('west-days').textContent = dateLabel;
-      renderSide('eastside', data.eastside || [], 'east-count');
-      renderSide('westside', data.westside || [], 'west-count');
+      renderSide('eastside', data.eastside || [], 'east-count', data.weatherByDate || {});
+      renderSide('westside', data.westside || [], 'west-count', data.weatherByDate || {});
     }
-    function renderSide(containerId, blinds, countId) {
+    function renderSide(containerId, blinds, countId, weatherByDate) {
       var container = document.getElementById(containerId);
       container.innerHTML = '';
       if (!blinds.length) {
@@ -539,9 +611,10 @@ def get_index_html():
         panel.className = 'blind-panel';
         var dailySorted = blind.daily.slice().sort(function(a,b) { return a.date.localeCompare(b.date); });
         var rows = dailySorted.map(function(d) {
-          return '<tr><td>' + formatDate(d.date) + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td></tr>';
+          var w = formatWeather(weatherByDate[d.date]);
+          return '<tr><td>' + formatDate(d.date) + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td><td class="weather-cell">' + w.temp + '</td><td class="weather-cell">' + w.rain + '</td><td class="weather-cell">' + w.wind + '</td></tr>';
         }).join('');
-        panel.innerHTML = '<div class="daily-meta"><div class="daily-title">Daily breakdown</div><div class="daily-summary">' + blind.daily.length + ' day(s) from latest reports.</div></div><table><thead><tr><th>Date</th><th>Hunters</th><th>Ducks</th><th>Ducks/Hunter</th></tr></thead><tbody>' + rows + '</tbody></table>';
+        panel.innerHTML = '<div class="daily-meta"><div class="daily-title">Daily breakdown</div><div class="daily-summary">' + blind.daily.length + ' day(s) from latest reports. Weather: Sauvie Island (Open-Meteo).</div></div><table><thead><tr><th>Date</th><th>Hunters</th><th>Ducks</th><th>Ducks/Hunter</th><th>Temp (Lo/Hi)</th><th>Rain</th><th>Wind</th></tr></thead><tbody>' + rows + '</tbody></table>';
         header.addEventListener('click', function() {
           wrapper.classList.toggle('open');
           if (wrapper.classList.contains('open')) {
