@@ -279,8 +279,18 @@ def main():
         else:
             westside_records.append(record)
 
-    eastside_records.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
-    westside_records.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
+    # Split into blind summaries (page 1 area names, no " #") and unit tables (e.g. "Johnson #1")
+    def is_summary(record):
+        return " #" not in record["blind"]
+
+    eastside_summary = [r for r in eastside_records if is_summary(r)]
+    eastside_units = [r for r in eastside_records if not is_summary(r)]
+    westside_summary = [r for r in westside_records if is_summary(r)]
+    westside_units = [r for r in westside_records if not is_summary(r)]
+    eastside_summary.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
+    eastside_units.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
+    westside_summary.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
+    westside_units.sort(key=lambda r: (r["ducksPerHunter"], r["blind"]), reverse=True)
 
     def print_ranking(side_name, rows):
         print(f"\n{'='*52}")
@@ -293,8 +303,8 @@ def main():
 
     print("Blinds by ducks per hunter (latest 3 days combined, highest first)")
     print(f"Source: latest 3 daily harvest reports from ODFW")
-    print_ranking("EASTSIDE", eastside_records)
-    print_ranking("WESTSIDE", westside_records)
+    print_ranking("EASTSIDE", eastside_summary + eastside_units)
+    print_ranking("WESTSIDE", westside_summary + westside_units)
 
     out_path = base / "blinds_by_ducks_per_hunter.txt"
     with open(out_path, "w") as f:
@@ -303,12 +313,12 @@ def main():
         f.write("EASTSIDE\n")
         f.write(f"{'Rank':>4}  {'Blind':<25} {'Ducks/Hunter':>12}\n")
         f.write("-"*52 + "\n")
-        for rank, rec in enumerate(eastside_records, 1):
+        for rank, rec in enumerate(eastside_summary + eastside_units, 1):
             f.write(f"{rank:>4}  {rec['blind']:<25} {rec['ducksPerHunter']:>12.1f}\n")
         f.write("\nWESTSIDE\n")
         f.write(f"{'Rank':>4}  {'Blind':<25} {'Ducks/Hunter':>12}\n")
         f.write("-"*52 + "\n")
-        for rank, rec in enumerate(westside_records, 1):
+        for rank, rec in enumerate(westside_summary + westside_units, 1):
             f.write(f"{rank:>4}  {rec['blind']:<25} {rec['ducksPerHunter']:>12.1f}\n")
     print(f"\nWrote rankings to {out_path}")
 
@@ -318,8 +328,10 @@ def main():
         "source": "latest 3 daily harvest reports from ODFW",
         "dates": dates,
         "weatherByDate": weather_by_date,
-        "eastside": eastside_records,
-        "westside": westside_records,
+        "eastsideSummary": eastside_summary,
+        "eastsideUnits": eastside_units,
+        "westsideSummary": westside_summary,
+        "westsideUnits": westside_units,
     }
     with open(json_path, "w") as jf:
         json.dump(data, jf, indent=2)
@@ -526,6 +538,17 @@ def get_index_html():
     .empty-state { padding: 1.1rem 1.3rem 1.3rem; font-size: 0.85rem; color: var(--muted); }
     .empty-state strong { color: var(--danger); }
     .footer-note { margin-top: 0.25rem; font-size: 0.75rem; color: var(--muted); }
+    .section-heading {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin: 0.75rem 0.5rem 0.35rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid rgba(210,210,215,0.8);
+    }
+    .section-heading:first-of-type { margin-top: 0.35rem; }
+    .blinds-list.section-list { max-height: none; }
   </style>
 </head>
 <body>
@@ -550,7 +573,10 @@ def get_index_html():
             <span id="east-count"></span>
           </div>
         </div>
-        <div class="blinds-list" id="eastside"></div>
+        <h2 class="section-heading">Blind summaries</h2>
+        <div class="blinds-list section-list" id="eastside-summary"></div>
+        <h2 class="section-heading">By unit</h2>
+        <div class="blinds-list" id="eastside-units"></div>
       </section>
       <section class="panel" id="west-panel">
         <div class="panel-header">
@@ -560,7 +586,10 @@ def get_index_html():
             <span id="west-count"></span>
           </div>
         </div>
-        <div class="blinds-list" id="westside"></div>
+        <h2 class="section-heading">Blind summaries</h2>
+        <div class="blinds-list section-list" id="westside-summary"></div>
+        <h2 class="section-heading">By unit</h2>
+        <div class="blinds-list" id="westside-units"></div>
       </section>
     </div>
   </main>
@@ -573,8 +602,10 @@ def get_index_html():
         renderAll(data);
       } catch (err) {
         console.error(err);
-        document.querySelectorAll('.blinds-list').forEach(function(list) {
-          list.innerHTML = '<div class="empty-state"><strong>Unable to load data.</strong> Ensure blinds_data.json is present and open via a local web server.</div>';
+        var msg = '<div class="empty-state"><strong>Unable to load data.</strong> Ensure blinds_data.json is present and open via a local web server.</div>';
+        ['eastside-summary','eastside-units','westside-summary','westside-units'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = msg;
         });
       }
     }
@@ -592,18 +623,22 @@ def get_index_html():
       var dateLabel = (data.dates && data.dates.length) ? data.dates.map(formatDate).join(' \u00b7 ') : 'No dates';
       document.getElementById('east-days').textContent = dateLabel;
       document.getElementById('west-days').textContent = dateLabel;
-      renderSide('eastside', data.eastside || [], 'east-count', data.weatherByDate || {});
-      renderSide('westside', data.westside || [], 'west-count', data.weatherByDate || {});
+      var weather = data.weatherByDate || {};
+      renderBlindList(document.getElementById('eastside-summary'), data.eastsideSummary || [], weather);
+      renderBlindList(document.getElementById('eastside-units'), data.eastsideUnits || [], weather);
+      renderBlindList(document.getElementById('westside-summary'), data.westsideSummary || [], weather);
+      renderBlindList(document.getElementById('westside-units'), data.westsideUnits || [], weather);
+      var es = (data.eastsideSummary || []).length, eu = (data.eastsideUnits || []).length;
+      var ws = (data.westsideSummary || []).length, wu = (data.westsideUnits || []).length;
+      document.getElementById('east-count').textContent = es + ' areas, ' + eu + ' units';
+      document.getElementById('west-count').textContent = ws + ' areas, ' + wu + ' units';
     }
-    function renderSide(containerId, blinds, countId, weatherByDate) {
-      var container = document.getElementById(containerId);
+    function renderBlindList(container, blinds, weatherByDate) {
       container.innerHTML = '';
       if (!blinds.length) {
-        container.innerHTML = '<div class="empty-state"><strong>No blinds found.</strong></div>';
-        if (countId) document.getElementById(countId).textContent = '0 blinds';
+        container.innerHTML = '<div class="empty-state">No entries.</div>';
         return;
       }
-      if (countId) document.getElementById(countId).textContent = blinds.length + ' blinds';
       blinds.forEach(function(blind, index) {
         var wrapper = document.createElement('article');
         wrapper.className = 'blind';
