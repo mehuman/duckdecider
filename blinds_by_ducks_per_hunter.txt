@@ -1,0 +1,109 @@
+Blinds ranked by ducks per hunter (3-day aggregate)
+Sauvie Island Wildlife Area — latest 3 daily reports
+
+EASTSIDE
+Rank  Blind                     Ducks/Hunter
+----------------------------------------------------
+   1  Malarky                            5.3
+   2  Racetrack                          5.2
+   3  Aaron                              4.7
+   4  Johnson                            4.4
+   5  McNary                             3.5
+   6  Rentenaar                          2.6
+   7  Mudhen                             1.7
+   8  Footbridge                         1.5
+   9  Hunt                               1.2
+  10  Dead Willow                        0.8
+  11  Pope Lake                          0.7
+  12  Stutzer                            0.0
+  13  Reeder Tract                       0.0
+  14  Johnson #3                         6.8
+  15  Racetrack #13                      6.4
+  16  Racetrack #15                      6.3
+  17  Racetrack #11                      5.9
+  18  Johnson #5                         5.6
+  19  Johnson #4                         5.0
+  20  Racetrack #12                      4.7
+  21  Johnson #1                         4.6
+  22  Mudhen #3                          3.5
+  23  Racetrack #14                      3.1
+  24  Hunt #5                            2.8
+  25  Mudhen #12                         2.2
+  26  Mudhen #7                          2.0
+  27  Johnson #2                         1.8
+  28  Mudhen #14                         1.7
+  29  Mudhen #5                          1.5
+  30  Mudhen #16                         1.4
+  31  Mudhen #8                          1.3
+  32  Mudhen #11                         1.3
+  33  Hunt #11                           1.2
+  34  Hunt #4                            1.2
+  35  Hunt #7                            1.2
+  36  Mudhen #4                          1.1
+  37  Mudhen #13                         1.0
+  38  Hunt #6                            1.0
+  39  Hunt #13                           1.0
+  40  Mudhen #9                          0.8
+  41  Mudhen #15                         0.5
+  42  Hunt #9                            0.3
+  43  Hunt #8                            0.2
+  44  Oak Island #6                      0.0
+  45  Oak Island #5                      0.0
+  46  Oak Island #4                      0.0
+  47  Oak Island #3                      0.0
+  48  Oak Island #2                      0.0
+  49  Oak Island #1                      0.0
+  50  Mudhen #ADA                        0.0
+  51  Mudhen #6                          0.0
+  52  Johnson #7                         0.0
+  53  Johnson #6                         0.0
+  54  Hunt #ADA                          0.0
+
+WESTSIDE
+Rank  Blind                     Ducks/Hunter
+----------------------------------------------------
+   1  Mud Lake                           4.7
+   2  Seal                               4.3
+   3  Crane                              3.3
+   4  Steelman                           1.7
+   5  Flights End                        1.3
+   6  Holman Point                       0.6
+   7  Mud Lake #4                        6.9
+   8  Mud Lake #5                        6.9
+   9  Mud Lake #8                        6.7
+  10  Mud Lake #7                        6.6
+  11  Mud Lake #6                        6.6
+  12  Mud Lake #2                        6.4
+  13  Mud Lake #3                        6.1
+  14  Seal #ADA                          5.6
+  15  Mud Lake #10                       5.5
+  16  Seal #6                            5.4
+  17  Seal #1                            5.3
+  18  Mud Lake #1                        4.4
+  19  Mud Lake #11                       4.4
+  20  Steelman #10                       3.6
+  21  Seal #2                            3.6
+  22  Seal #5                            3.3
+  23  Steelman #2                        3.0
+  24  Steelman #8                        2.9
+  25  Seal #3                            2.7
+  26  Mud Lake #13                       1.8
+  27  Steelman #1                        1.8
+  28  Steelman #6                        1.5
+  29  Mud Lake #9                        1.3
+  30  Holman Point #1                    1.2
+  31  Steelman #5                        1.0
+  32  Mud Lake #15                       1.0
+  33  Holman Point #5                    1.0
+  34  Steelman #4                        0.8
+  35  Mud Lake #14                       0.8
+  36  Steelman #7                        0.7
+  37  Steelman #3                        0.5
+  38  Mud Lake #12                       0.5
+  39  Holman Point #4                    0.1
+  40  Steelman #9                        0.1
+  41  Steelman #ADA                      0.0
+  42  Seal #4                            0.0
+  43  Holman Point #6                    0.0
+  44  Holman Point #3                    0.0
+  45  Holman Point #2                    0.0

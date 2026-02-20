@@ -1,0 +1,2579 @@
+{
+  "source": "latest 3 daily harvest reports from ODFW",
+  "dates": [
+    "2026-01-21",
+    "2026-01-23",
+    "2026-01-25"
+  ],
+  "weatherByDate": {
+    "2026-01-21": {
+      "tempMin": 28.0,
+      "tempMax": 43.8,
+      "precipitation": 0.0,
+      "windDirection": "W"
+    },
+    "2026-01-23": {
+      "tempMin": 29.1,
+      "tempMax": 43.2,
+      "precipitation": 0.0,
+      "windDirection": "N"
+    },
+    "2026-01-25": {
+      "tempMin": 24.6,
+      "tempMax": 44.3,
+      "precipitation": 0.0,
+      "windDirection": "NW"
+    }
+  },
+  "pdfByDate": {
+    "2026-01-25": "https://myodfw.com/sites/default/files/2026-01/01252026s.pdf",
+    "2026-01-23": "https://myodfw.com/sites/default/files/2026-01/01232026s.pdf",
+    "2026-01-21": "https://myodfw.com/sites/default/files/2026-01/01212026s.pdf"
+  },
+  "eastsideSummary": [
+    {
+      "blind": "Malarky",
+      "totalHunters": 31,
+      "totalDucks": 163,
+      "ducksPerHunter": 5.258,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 10,
+          "ducks": 58,
+          "ducksPerHunter": 5.8
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 9,
+          "ducks": 45,
+          "ducksPerHunter": 5.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 12,
+          "ducks": 60,
+          "ducksPerHunter": 5.0
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack",
+      "totalHunters": 40,
+      "totalDucks": 210,
+      "ducksPerHunter": 5.25,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 14,
+          "ducks": 83,
+          "ducksPerHunter": 5.929
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 11,
+          "ducks": 42,
+          "ducksPerHunter": 3.818
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 15,
+          "ducks": 85,
+          "ducksPerHunter": 5.667
+        }
+      ]
+    },
+    {
+      "blind": "Aaron",
+      "totalHunters": 34,
+      "totalDucks": 159,
+      "ducksPerHunter": 4.676,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 9,
+          "ducks": 55,
+          "ducksPerHunter": 6.111
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 13,
+          "ducks": 36,
+          "ducksPerHunter": 2.769
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 12,
+          "ducks": 68,
+          "ducksPerHunter": 5.667
+        }
+      ]
+    },
+    {
+      "blind": "Johnson",
+      "totalHunters": 41,
+      "totalDucks": 182,
+      "ducksPerHunter": 4.439,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 11,
+          "ducks": 41,
+          "ducksPerHunter": 3.727
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 15,
+          "ducks": 66,
+          "ducksPerHunter": 4.4
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 15,
+          "ducks": 75,
+          "ducksPerHunter": 5.0
+        }
+      ]
+    },
+    {
+      "blind": "McNary",
+      "totalHunters": 27,
+      "totalDucks": 95,
+      "ducksPerHunter": 3.519,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 5,
+          "ducks": 14,
+          "ducksPerHunter": 2.8
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 12,
+          "ducks": 34,
+          "ducksPerHunter": 2.833
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 10,
+          "ducks": 47,
+          "ducksPerHunter": 4.7
+        }
+      ]
+    },
+    {
+      "blind": "Rentenaar",
+      "totalHunters": 28,
+      "totalDucks": 72,
+      "ducksPerHunter": 2.571,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 8,
+          "ducks": 37,
+          "ducksPerHunter": 4.625
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 10,
+          "ducks": 20,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 10,
+          "ducks": 15,
+          "ducksPerHunter": 1.5
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen",
+      "totalHunters": 62,
+      "totalDucks": 107,
+      "ducksPerHunter": 1.726,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 14,
+          "ducks": 36,
+          "ducksPerHunter": 2.571
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 20,
+          "ducks": 31,
+          "ducksPerHunter": 1.55
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 28,
+          "ducks": 40,
+          "ducksPerHunter": 1.429
+        }
+      ]
+    },
+    {
+      "blind": "Footbridge",
+      "totalHunters": 17,
+      "totalDucks": 26,
+      "ducksPerHunter": 1.529,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 14,
+          "ducksPerHunter": 3.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 6,
+          "ducks": 5,
+          "ducksPerHunter": 0.833
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 7,
+          "ducks": 7,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt",
+      "totalHunters": 53,
+      "totalDucks": 61,
+      "ducksPerHunter": 1.151,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 15,
+          "ducks": 19,
+          "ducksPerHunter": 1.267
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 24,
+          "ducks": 18,
+          "ducksPerHunter": 0.75
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 14,
+          "ducks": 24,
+          "ducksPerHunter": 1.714
+        }
+      ]
+    },
+    {
+      "blind": "Dead Willow",
+      "totalHunters": 10,
+      "totalDucks": 8,
+      "ducksPerHunter": 0.8,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 7,
+          "ducksPerHunter": 2.333
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 5,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Pope Lake",
+      "totalHunters": 6,
+      "totalDucks": 4,
+      "ducksPerHunter": 0.667,
+      "daily": [
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 1,
+          "ducksPerHunter": 0.25
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        }
+      ]
+    },
+    {
+      "blind": "Stutzer",
+      "totalHunters": 4,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Reeder Tract",
+      "totalHunters": 1,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    }
+  ],
+  "eastsideUnits": [
+    {
+      "blind": "Johnson #3",
+      "totalHunters": 12,
+      "totalDucks": 81,
+      "ducksPerHunter": 6.75,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 5,
+          "ducks": 32,
+          "ducksPerHunter": 6.4
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack #13",
+      "totalHunters": 10,
+      "totalDucks": 64,
+      "ducksPerHunter": 6.4,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 15,
+          "ducksPerHunter": 5.0
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack #15",
+      "totalHunters": 6,
+      "totalDucks": 38,
+      "ducksPerHunter": 6.333,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 6,
+          "ducksPerHunter": 6.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 11,
+          "ducksPerHunter": 5.5
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack #11",
+      "totalHunters": 8,
+      "totalDucks": 47,
+      "ducksPerHunter": 5.875,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 19,
+          "ducksPerHunter": 6.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #5",
+      "totalHunters": 9,
+      "totalDucks": 50,
+      "ducksPerHunter": 5.556,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 7,
+          "ducksPerHunter": 3.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 22,
+          "ducksPerHunter": 5.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #4",
+      "totalHunters": 2,
+      "totalDucks": 10,
+      "ducksPerHunter": 5.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 10,
+          "ducksPerHunter": 5.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack #12",
+      "totalHunters": 7,
+      "totalDucks": 33,
+      "ducksPerHunter": 4.714,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 11,
+          "ducksPerHunter": 3.667
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #1",
+      "totalHunters": 5,
+      "totalDucks": 23,
+      "ducksPerHunter": 4.6,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #3",
+      "totalHunters": 10,
+      "totalDucks": 35,
+      "ducksPerHunter": 3.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 2,
+          "ducksPerHunter": 0.667
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 5,
+          "ducks": 19,
+          "ducksPerHunter": 3.8
+        }
+      ]
+    },
+    {
+      "blind": "Racetrack #14",
+      "totalHunters": 9,
+      "totalDucks": 28,
+      "ducksPerHunter": 3.111,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 14,
+          "ducksPerHunter": 4.667
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 4,
+          "ducksPerHunter": 1.333
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 10,
+          "ducksPerHunter": 3.333
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #5",
+      "totalHunters": 6,
+      "totalDucks": 17,
+      "ducksPerHunter": 2.833,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 4,
+          "ducksPerHunter": 4.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 5,
+          "ducksPerHunter": 1.667
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 8,
+          "ducksPerHunter": 4.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #12",
+      "totalHunters": 8,
+      "totalDucks": 18,
+      "ducksPerHunter": 2.25,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 10,
+          "ducksPerHunter": 3.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 5,
+          "ducksPerHunter": 1.667
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #7",
+      "totalHunters": 1,
+      "totalDucks": 2,
+      "ducksPerHunter": 2.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #2",
+      "totalHunters": 10,
+      "totalDucks": 18,
+      "ducksPerHunter": 1.8,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 13,
+          "ducksPerHunter": 3.25
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 5,
+          "ducks": 5,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #14",
+      "totalHunters": 3,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.667,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #5",
+      "totalHunters": 2,
+      "totalDucks": 3,
+      "ducksPerHunter": 1.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #16",
+      "totalHunters": 5,
+      "totalDucks": 7,
+      "ducksPerHunter": 1.4,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 5,
+          "ducksPerHunter": 5.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 2,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #8",
+      "totalHunters": 6,
+      "totalDucks": 8,
+      "ducksPerHunter": 1.333,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 7,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #11",
+      "totalHunters": 9,
+      "totalDucks": 12,
+      "ducksPerHunter": 1.333,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 5,
+          "ducksPerHunter": 1.667
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 4,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #11",
+      "totalHunters": 4,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.25,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #4",
+      "totalHunters": 10,
+      "totalDucks": 12,
+      "ducksPerHunter": 1.2,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 9,
+          "ducksPerHunter": 4.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 6,
+          "ducks": 3,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #7",
+      "totalHunters": 13,
+      "totalDucks": 15,
+      "ducksPerHunter": 1.154,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 2,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 6,
+          "ducks": 1,
+          "ducksPerHunter": 0.167
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 12,
+          "ducksPerHunter": 4.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #4",
+      "totalHunters": 7,
+      "totalDucks": 8,
+      "ducksPerHunter": 1.143,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 6,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #13",
+      "totalHunters": 5,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 3,
+          "ducksPerHunter": 3.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 2,
+          "ducksPerHunter": 0.667
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #6",
+      "totalHunters": 5,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 4,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #13",
+      "totalHunters": 4,
+      "totalDucks": 4,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #9",
+      "totalHunters": 4,
+      "totalDucks": 3,
+      "ducksPerHunter": 0.75,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #15",
+      "totalHunters": 2,
+      "totalDucks": 1,
+      "ducksPerHunter": 0.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #9",
+      "totalHunters": 7,
+      "totalDucks": 2,
+      "ducksPerHunter": 0.286,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 1,
+          "ducksPerHunter": 0.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 1,
+          "ducksPerHunter": 0.333
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #8",
+      "totalHunters": 4,
+      "totalDucks": 1,
+      "ducksPerHunter": 0.25,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #6",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #5",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #4",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #3",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #2",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Oak Island #1",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #ADA",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mudhen #6",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #7",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Johnson #6",
+      "totalHunters": 3,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Hunt #ADA",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    }
+  ],
+  "westsideSummary": [
+    {
+      "blind": "Mud Lake",
+      "totalHunters": 133,
+      "totalDucks": 630,
+      "ducksPerHunter": 4.737,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 40,
+          "ducks": 210,
+          "ducksPerHunter": 5.25
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 45,
+          "ducks": 202,
+          "ducksPerHunter": 4.489
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 48,
+          "ducks": 218,
+          "ducksPerHunter": 4.542
+        }
+      ]
+    },
+    {
+      "blind": "Seal",
+      "totalHunters": 45,
+      "totalDucks": 192,
+      "ducksPerHunter": 4.267,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 12,
+          "ducks": 52,
+          "ducksPerHunter": 4.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 18,
+          "ducks": 63,
+          "ducksPerHunter": 3.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 15,
+          "ducks": 77,
+          "ducksPerHunter": 5.133
+        }
+      ]
+    },
+    {
+      "blind": "Crane",
+      "totalHunters": 29,
+      "totalDucks": 97,
+      "ducksPerHunter": 3.345,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 9,
+          "ducks": 21,
+          "ducksPerHunter": 2.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 7,
+          "ducks": 31,
+          "ducksPerHunter": 4.429
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 13,
+          "ducks": 45,
+          "ducksPerHunter": 3.462
+        }
+      ]
+    },
+    {
+      "blind": "Steelman",
+      "totalHunters": 72,
+      "totalDucks": 121,
+      "ducksPerHunter": 1.681,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 26,
+          "ducks": 54,
+          "ducksPerHunter": 2.077
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 25,
+          "ducks": 39,
+          "ducksPerHunter": 1.56
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 21,
+          "ducks": 28,
+          "ducksPerHunter": 1.333
+        }
+      ]
+    },
+    {
+      "blind": "Flights End",
+      "totalHunters": 3,
+      "totalDucks": 4,
+      "ducksPerHunter": 1.333,
+      "daily": [
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 4,
+          "ducksPerHunter": 1.333
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point",
+      "totalHunters": 17,
+      "totalDucks": 11,
+      "ducksPerHunter": 0.647,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 7,
+          "ducks": 5,
+          "ducksPerHunter": 0.714
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 9,
+          "ducks": 5,
+          "ducksPerHunter": 0.556
+        }
+      ]
+    }
+  ],
+  "westsideUnits": [
+    {
+      "blind": "Mud Lake #4",
+      "totalHunters": 14,
+      "totalDucks": 97,
+      "ducksPerHunter": 6.929,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 9,
+          "ducks": 62,
+          "ducksPerHunter": 6.889
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #5",
+      "totalHunters": 7,
+      "totalDucks": 48,
+      "ducksPerHunter": 6.857,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 6,
+          "ducksPerHunter": 6.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #8",
+      "totalHunters": 11,
+      "totalDucks": 74,
+      "ducksPerHunter": 6.727,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 25,
+          "ducksPerHunter": 6.25
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #7",
+      "totalHunters": 8,
+      "totalDucks": 53,
+      "ducksPerHunter": 6.625,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 4,
+          "ducksPerHunter": 4.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #6",
+      "totalHunters": 8,
+      "totalDucks": 53,
+      "ducksPerHunter": 6.625,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 25,
+          "ducksPerHunter": 6.25
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #2",
+      "totalHunters": 10,
+      "totalDucks": 64,
+      "ducksPerHunter": 6.4,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 15,
+          "ducksPerHunter": 5.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #3",
+      "totalHunters": 10,
+      "totalDucks": 61,
+      "ducksPerHunter": 6.1,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 5,
+          "ducks": 35,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 26,
+          "ducksPerHunter": 6.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #ADA",
+      "totalHunters": 7,
+      "totalDucks": 39,
+      "ducksPerHunter": 5.571,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 11,
+          "ducksPerHunter": 3.667
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #10",
+      "totalHunters": 6,
+      "totalDucks": 33,
+      "ducksPerHunter": 5.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 13,
+          "ducksPerHunter": 6.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 6,
+          "ducksPerHunter": 3.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #6",
+      "totalHunters": 9,
+      "totalDucks": 49,
+      "ducksPerHunter": 5.444,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 20,
+          "ducksPerHunter": 5.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #1",
+      "totalHunters": 6,
+      "totalDucks": 32,
+      "ducksPerHunter": 5.333,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 18,
+          "ducksPerHunter": 6.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #1",
+      "totalHunters": 9,
+      "totalDucks": 40,
+      "ducksPerHunter": 4.444,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 21,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 19,
+          "ducksPerHunter": 4.75
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #11",
+      "totalHunters": 15,
+      "totalDucks": 66,
+      "ducksPerHunter": 4.4,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 24,
+          "ducksPerHunter": 6.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 6,
+          "ducks": 7,
+          "ducksPerHunter": 1.167
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 5,
+          "ducks": 35,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #10",
+      "totalHunters": 11,
+      "totalDucks": 40,
+      "ducksPerHunter": 3.636,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 28,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 12,
+          "ducksPerHunter": 3.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #2",
+      "totalHunters": 7,
+      "totalDucks": 25,
+      "ducksPerHunter": 3.571,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 7,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 9,
+          "ducksPerHunter": 2.25
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 9,
+          "ducksPerHunter": 4.5
+        }
+      ]
+    },
+    {
+      "blind": "Seal #5",
+      "totalHunters": 7,
+      "totalDucks": 23,
+      "ducksPerHunter": 3.286,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 17,
+          "ducksPerHunter": 4.25
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 3,
+          "ducksPerHunter": 3.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #2",
+      "totalHunters": 7,
+      "totalDucks": 21,
+      "ducksPerHunter": 3.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 4,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 3,
+          "ducksPerHunter": 3.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 14,
+          "ducksPerHunter": 7.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #8",
+      "totalHunters": 7,
+      "totalDucks": 20,
+      "ducksPerHunter": 2.857,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 4,
+          "ducks": 16,
+          "ducksPerHunter": 4.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 4,
+          "ducksPerHunter": 4.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #3",
+      "totalHunters": 9,
+      "totalDucks": 24,
+      "ducksPerHunter": 2.667,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 12,
+          "ducksPerHunter": 6.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 3,
+          "ducksPerHunter": 0.75
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 9,
+          "ducksPerHunter": 3.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #13",
+      "totalHunters": 10,
+      "totalDucks": 18,
+      "ducksPerHunter": 1.8,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 4,
+          "ducks": 18,
+          "ducksPerHunter": 4.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #1",
+      "totalHunters": 4,
+      "totalDucks": 7,
+      "ducksPerHunter": 1.75,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 7,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #6",
+      "totalHunters": 11,
+      "totalDucks": 17,
+      "ducksPerHunter": 1.545,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 2,
+          "ducksPerHunter": 2.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 7,
+          "ducks": 13,
+          "ducksPerHunter": 1.857
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 2,
+          "ducksPerHunter": 0.667
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #9",
+      "totalHunters": 7,
+      "totalDucks": 9,
+      "ducksPerHunter": 1.286,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 2,
+          "ducksPerHunter": 0.667
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 4,
+          "ducksPerHunter": 2.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #1",
+      "totalHunters": 4,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.25,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 4,
+          "ducksPerHunter": 1.333
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #5",
+      "totalHunters": 4,
+      "totalDucks": 4,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 4,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #15",
+      "totalHunters": 7,
+      "totalDucks": 7,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 7,
+          "ducksPerHunter": 7.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #5",
+      "totalHunters": 5,
+      "totalDucks": 5,
+      "ducksPerHunter": 1.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 4,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #4",
+      "totalHunters": 6,
+      "totalDucks": 5,
+      "ducksPerHunter": 0.833,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 4,
+          "ducksPerHunter": 2.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #14",
+      "totalHunters": 5,
+      "totalDucks": 4,
+      "ducksPerHunter": 0.8,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 2,
+          "ducks": 4,
+          "ducksPerHunter": 2.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #7",
+      "totalHunters": 6,
+      "totalDucks": 4,
+      "ducksPerHunter": 0.667,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 3,
+          "ducksPerHunter": 1.5
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 1,
+          "ducksPerHunter": 0.333
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #3",
+      "totalHunters": 4,
+      "totalDucks": 2,
+      "ducksPerHunter": 0.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 2,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Mud Lake #12",
+      "totalHunters": 6,
+      "totalDucks": 3,
+      "ducksPerHunter": 0.5,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 1,
+          "ducksPerHunter": 0.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 1,
+          "ducksPerHunter": 0.5
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #4",
+      "totalHunters": 7,
+      "totalDucks": 1,
+      "ducksPerHunter": 0.143,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 1,
+          "ducks": 1,
+          "ducksPerHunter": 1.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 2,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 4,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #9",
+      "totalHunters": 9,
+      "totalDucks": 1,
+      "ducksPerHunter": 0.111,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 1,
+          "ducksPerHunter": 0.333
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 3,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 3,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Steelman #ADA",
+      "totalHunters": 3,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 3,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Seal #4",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #6",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #3",
+      "totalHunters": 1,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 1,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    },
+    {
+      "blind": "Holman Point #2",
+      "totalHunters": 0,
+      "totalDucks": 0,
+      "ducksPerHunter": 0.0,
+      "daily": [
+        {
+          "date": "2026-01-21",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        },
+        {
+          "date": "2026-01-25",
+          "hunters": 0,
+          "ducks": 0,
+          "ducksPerHunter": 0.0
+        }
+      ]
+    }
+  ]
+}
