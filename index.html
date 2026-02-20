@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sauvie Island Duck Blinds – Last 3 Days</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --apple-bg: #fbfbfd;
+      --apple-bg-secondary: #f5f5f7;
+      --apple-white: #ffffff;
+      --apple-blue: #06c;
+      --apple-blue-hover: #0077ed;
+      --apple-text: #1d1d1f;
+      --apple-text-secondary: #6e6e73;
+      --apple-border: #d2d2d7;
+      --apple-red: #ff3b30;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.47059;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      background: var(--apple-bg);
+      color: var(--apple-text);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    header {
+      padding: 2rem clamp(22px, 5vw, 48px) 1.5rem;
+      background: var(--apple-white);
+      border-bottom: 1px solid var(--apple-border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .subheading {
+      font-size: 15px;
+      color: var(--apple-text-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 980px;
+    }
+    .pill {
+      padding: 4px 12px;
+      border-radius: 980px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--apple-bg-secondary);
+      color: var(--apple-text-secondary);
+    }
+    .pill-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--apple-blue);
+    }
+    main {
+      padding: 2.5rem clamp(22px, 5vw, 48px) 4rem;
+      flex: 1;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (min-width: 980px) {
+      .layout { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+    }
+    .panel {
+      background: var(--apple-white);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--apple-border);
+    }
+    .panel-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--apple-border);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--apple-text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .panel-title span.badge {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      padding: 4px 10px;
+      border-radius: 980px;
+      background: var(--apple-bg-secondary);
+      color: var(--apple-text-secondary);
+    }
+    .panel-meta {
+      font-size: 13px;
+      color: var(--apple-text-secondary);
+      text-align: right;
+    }
+    .blinds-list {
+      padding: 0.5rem 0.75rem 1rem;
+      max-height: 78vh;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--apple-border) transparent;
+    }
+    .blinds-list::-webkit-scrollbar { width: 8px; }
+    .blinds-list::-webkit-scrollbar-track { background: transparent; }
+    .blinds-list::-webkit-scrollbar-thumb { background: var(--apple-border); border-radius: 8px; }
+    .blind {
+      border-radius: 12px;
+      background: var(--apple-white);
+      margin: 6px 0;
+      overflow: hidden;
+      border: 1px solid var(--apple-border);
+      transition: background 0.2s ease;
+    }
+    .blind-header {
+      all: unset;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--apple-text);
+      width: 100%;
+      text-align: left;
+    }
+    .blind-header:hover { background: var(--apple-bg-secondary); }
+    .blind-rank {
+      font-variant-numeric: tabular-nums;
+      color: var(--apple-text-secondary);
+      font-size: 13px;
+      width: 28px;
+      text-align: right;
+    }
+    .blind-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .blind-metrics {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      font-size: 13px;
+      color: var(--apple-text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .blind-metrics strong { color: var(--apple-blue); font-weight: 600; }
+    .blind-arrow {
+      margin-left: 4px;
+      transition: transform 0.25s ease;
+      font-size: 14px;
+      color: var(--apple-text-secondary);
+    }
+    .blind.open .blind-arrow { transform: rotate(90deg); }
+    .blind-panel {
+      display: none;
+      padding: 0 16px 16px;
+      font-size: 13px;
+      background: var(--apple-bg-secondary);
+      border-top: 1px solid var(--apple-border);
+    }
+    .blind.open .blind-panel { display: block; }
+    .daily-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 12px 0 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .daily-title {
+      font-weight: 600;
+      color: var(--apple-text-secondary);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .daily-summary { font-size: 13px; color: var(--apple-text-secondary); }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+    thead { background: var(--apple-bg-secondary); }
+    th, td {
+      padding: 10px 12px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      border-bottom: 1px solid var(--apple-border);
+    }
+    th:first-child, td:first-child { text-align: left; }
+    td.weather-cell { font-size: 12px; color: var(--apple-text-secondary); }
+    .date-link { color: var(--apple-blue); text-decoration: none; }
+    .date-link:hover { color: var(--apple-blue-hover); text-decoration: underline; }
+    th {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--apple-text-secondary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      background: var(--apple-bg-secondary);
+      z-index: 1;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: rgba(255,255,255,0.5); }
+    tbody tr:nth-child(odd) td { background: transparent; }
+    .empty-state {
+      padding: 24px;
+      font-size: 15px;
+      color: var(--apple-text-secondary);
+    }
+    .empty-state strong { color: var(--apple-red); }
+    .footer-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--apple-text-secondary);
+    }
+    .footer-note a { color: var(--apple-blue); text-decoration: none; }
+    .footer-note a:hover { text-decoration: underline; }
+    .section-heading {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--apple-text);
+      letter-spacing: 0.04em;
+      margin: 1rem 1rem 0.5rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--apple-border);
+    }
+    .section-heading:first-of-type { margin-top: 0.75rem; }
+    .section-heading-link { color: inherit; text-decoration: none; }
+    .section-heading-link:hover { color: var(--apple-blue); text-decoration: underline; }
+    .blinds-list.section-list { max-height: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sauvie Island Duck Blinds</h1>
+    <div class="subheading">
+      <span>Latest 3 daily harvest reports · Ducks per hunter by blind</span>
+      <span class="pill"><span class="pill-dot"></span> Live from&nbsp;<code>myodfw.com</code></span>
+    </div>
+    <div class="footer-note">
+      Data source: latest three Daily Harvest PDFs from
+      <a href="https://myodfw.com/2025-26-sauvie-island-wildlife-area-game-bird-harvest-statistics" target="_blank" rel="noreferrer noopener">ODFW Sauvie Island harvest statistics</a>.
+    </div>
+  </header>
+  <main>
+    <div class="layout">
+      <section class="panel" id="east-panel">
+        <div class="panel-header">
+          <div class="panel-title">Eastside <span class="badge" id="east-days"></span></div>
+          <div class="panel-meta">
+            <span>Ranked by 3-day ducks per hunter</span>
+            <span id="east-count"></span>
+          </div>
+        </div>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/EastUnits.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Unit summaries</a></h2>
+        <div class="blinds-list section-list" id="eastside-summary"></div>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/BlindsEast.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Blind summaries</a></h2>
+        <div class="blinds-list" id="eastside-units"></div>
+      </section>
+      <section class="panel" id="west-panel">
+        <div class="panel-header">
+          <div class="panel-title">Westside <span class="badge" id="west-days"></span></div>
+          <div class="panel-meta">
+            <span>Ranked by 3-day ducks per hunter</span>
+            <span id="west-count"></span>
+          </div>
+        </div>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/WestUnits.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Unit summaries</a></h2>
+        <div class="blinds-list section-list" id="westside-summary"></div>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/BlindsWest.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Blind summaries</a></h2>
+        <div class="blinds-list" id="westside-units"></div>
+      </section>
+    </div>
+  </main>
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch('blinds_data.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('Failed to load blinds_data.json');
+        const data = await res.json();
+        renderAll(data);
+      } catch (err) {
+        console.error(err);
+        var msg = '<div class="empty-state"><strong>Unable to load data.</strong> Ensure blinds_data.json is present and open via a local web server.</div>';
+        ['eastside-summary','eastside-units','westside-summary','westside-units'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = msg;
+        });
+      }
+    }
+    function formatDate(iso) {
+      var p = iso.split('-');
+      return p[1] + '/' + p[2] + '/' + p[0].slice(2);
+    }
+    function formatWeather(w) {
+      if (!w) return { temp: '\u2014', rain: '\u2014', wind: '\u2014' };
+      var temp = (w.tempMin != null && w.tempMax != null) ? w.tempMin + '\u00b0 / ' + w.tempMax + '\u00b0' : '\u2014';
+      var rain = (w.precipitation != null && w.precipitation !== '') ? w.precipitation + ' in' : '\u2014';
+      return { temp: temp, rain: rain, wind: w.windDirection || '\u2014' };
+    }
+    function renderAll(data) {
+      var dateLabel = (data.dates && data.dates.length) ? data.dates.map(formatDate).join(' \u00b7 ') : 'No dates';
+      document.getElementById('east-days').textContent = dateLabel;
+      document.getElementById('west-days').textContent = dateLabel;
+      var weather = data.weatherByDate || {};
+      var pdfByDate = data.pdfByDate || {};
+      renderBlindList(document.getElementById('eastside-summary'), data.eastsideSummary || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('eastside-units'), data.eastsideUnits || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('westside-summary'), data.westsideSummary || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('westside-units'), data.westsideUnits || [], weather, pdfByDate);
+      var es = (data.eastsideSummary || []).length, eu = (data.eastsideUnits || []).length;
+      var ws = (data.westsideSummary || []).length, wu = (data.westsideUnits || []).length;
+      document.getElementById('east-count').textContent = es + ' units, ' + eu + ' blinds';
+      document.getElementById('west-count').textContent = ws + ' units, ' + wu + ' blinds';
+    }
+    function renderBlindList(container, blinds, weatherByDate, pdfByDate) {
+      container.innerHTML = '';
+      if (!blinds.length) {
+        container.innerHTML = '<div class="empty-state">No entries.</div>';
+        return;
+      }
+      blinds.forEach(function(blind, index) {
+        var wrapper = document.createElement('article');
+        wrapper.className = 'blind';
+        var header = document.createElement('button');
+        header.className = 'blind-header';
+        header.innerHTML = '<div class="blind-rank">' + String(index + 1).padStart(2, ' ') + '</div><div class="blind-name">' + blind.blind + '</div><div class="blind-metrics"><div><strong>' + blind.ducksPerHunter.toFixed(1) + '</strong> ducks / hunter</div><div>' + blind.totalDucks + ' ducks \u00b7 ' + blind.totalHunters + ' hunters</div></div><span class="blind-arrow">\u203a</span>';
+        var panel = document.createElement('div');
+        panel.className = 'blind-panel';
+        var dailySorted = blind.daily.slice().sort(function(a,b) { return a.date.localeCompare(b.date); });
+        var rows = dailySorted.map(function(d) {
+          var w = formatWeather(weatherByDate[d.date]);
+          var pdfUrl = (pdfByDate && pdfByDate[d.date]) ? pdfByDate[d.date] : '';
+          var dateCell = pdfUrl ? '<a href="' + pdfUrl + '" target="_blank" rel="noreferrer noopener" class="date-link">' + formatDate(d.date) + '</a>' : formatDate(d.date);
+          return '<tr><td>' + dateCell + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td><td class="weather-cell">' + w.temp + '</td><td class="weather-cell">' + w.rain + '</td><td class="weather-cell">' + w.wind + '</td></tr>';
+        }).join('');
+        panel.innerHTML = '<div class="daily-meta"><div class="daily-title">Daily breakdown</div><div class="daily-summary">' + blind.daily.length + ' day(s) from latest reports. Weather: Sauvie Island (Open-Meteo).</div></div><table><thead><tr><th>Date</th><th>Hunters</th><th>Ducks</th><th>Ducks/Hunter</th><th>Temp (Lo/Hi)</th><th>Rain</th><th>Wind</th></tr></thead><tbody>' + rows + '</tbody></table>';
+        header.addEventListener('click', function() {
+          wrapper.classList.toggle('open');
+          if (wrapper.classList.contains('open')) {
+            container.querySelectorAll('.blind.open').forEach(function(el) { if (el !== wrapper) el.classList.remove('open'); });
+          }
+        });
+        wrapper.appendChild(header);
+        wrapper.appendChild(panel);
+        container.appendChild(wrapper);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', loadData);
+  </script>
+</body>
+</html>
