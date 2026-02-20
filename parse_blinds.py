@@ -260,6 +260,305 @@ def main():
         json.dump(data, jf, indent=2)
     print(f"Wrote JSON data to {json_path}")
 
+    # Generate and write index.html for the static site
+    index_path = base / "index.html"
+    index_path.write_text(get_index_html(), encoding="utf-8")
+    print(f"Wrote {index_path}")
+
+
+def get_index_html():
+    """Return the full HTML for the static blinds site (loads blinds_data.json via fetch)."""
+    return r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sauvie Island Duck Blinds – Last 3 Days</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-elevated: #0b1020;
+      --accent: #4ade80;
+      --accent-soft: rgba(74, 222, 128, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --danger: #f97373;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    header {
+      padding: 1.5rem clamp(1.5rem, 3vw, 3rem);
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.9), rgba(15,23,42,0.4));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    h1 { margin: 0 0 0.25rem; font-size: clamp(1.4rem, 2vw, 1.8rem); letter-spacing: 0.03em; }
+    .subheading {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pill {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pill-dot {
+      width: 6px; height: 6px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(74,222,128,0.7);
+    }
+    main {
+      padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+    @media (min-width: 980px) {
+      .layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .panel {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.2), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(16,185,129,0.16), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(2,6,23,0.98));
+      border-radius: 1.1rem;
+      border: 1px solid rgba(30,64,175,0.9);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(15,23,42,0.8);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 0.95rem 1.1rem 0.8rem;
+      border-bottom: 1px solid rgba(31,41,55,0.95);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .panel-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .panel-title span.badge {
+      font-size: 0.7rem;
+      padding: 0.12rem 0.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0.04em;
+    }
+    .panel-meta { font-size: 0.75rem; color: var(--muted); display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; }
+    .panel-meta strong { color: var(--accent); font-weight: 600; }
+    .blinds-list {
+      padding: 0.4rem 0.4rem 0.75rem;
+      max-height: 80vh;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(148,163,184,0.7) transparent;
+    }
+    .blinds-list::-webkit-scrollbar { width: 6px; }
+    .blinds-list::-webkit-scrollbar-track { background: transparent; }
+    .blinds-list::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.55); border-radius: 999px; }
+    .blind {
+      border-radius: 0.75rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(10,15,30,0.98));
+      margin: 0.3rem;
+      overflow: hidden;
+    }
+    .blind-header {
+      all: unset;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.55rem;
+      align-items: center;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .blind-header:hover {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 60%);
+    }
+    .blind-rank { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.78rem; width: 2.2rem; text-align: right; }
+    .blind-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .blind-metrics {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .blind-metrics strong { color: var(--accent); font-weight: 600; }
+    .blind-arrow { margin-left: 0.25rem; transition: transform 0.18s ease; font-size: 0.9rem; opacity: 0.85; }
+    .blind.open .blind-arrow { transform: rotate(90deg); }
+    .blind-panel {
+      display: none;
+      padding: 0 0.7rem 0.6rem;
+      font-size: 0.78rem;
+      background: radial-gradient(circle at top, rgba(15,118,110,0.32), transparent 55%);
+      border-top: 1px solid rgba(30,64,175,0.6);
+    }
+    .blind.open .blind-panel { display: block; }
+    .daily-meta { display: flex; justify-content: space-between; align-items: baseline; margin: 0.45rem 0 0.25rem; }
+    .daily-title { font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem; }
+    .daily-summary { font-size: 0.78rem; color: var(--muted); }
+    .daily-summary strong { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.3rem; }
+    thead { background: rgba(15,23,42,0.9); }
+    th, td { padding: 0.25rem 0.35rem; text-align: right; font-variant-numeric: tabular-nums; }
+    th:first-child, td:first-child { text-align: left; }
+    th {
+      font-size: 0.72rem;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(30,64,175,0.8);
+      position: sticky;
+      top: 0;
+      background: linear-gradient(to bottom, rgba(15,23,42,1), rgba(15,23,42,0.9));
+      z-index: 1;
+    }
+    tbody tr:nth-child(even) td { background: rgba(15,23,42,0.7); }
+    tbody tr:nth-child(odd) td { background: rgba(15,23,42,0.4); }
+    .empty-state { padding: 1rem 1.2rem 1.2rem; font-size: 0.85rem; color: var(--muted); }
+    .empty-state strong { color: var(--danger); }
+    .footer-note { margin-top: 0.25rem; font-size: 0.75rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sauvie Island Duck Blinds</h1>
+    <div class="subheading">
+      <span>Latest 3 daily harvest reports · Ducks per hunter by blind</span>
+      <span class="pill"><span class="pill-dot"></span> Live from&nbsp;<code>myodfw.com</code></span>
+    </div>
+    <div class="footer-note">
+      Data source: latest three Daily Harvest PDFs from
+      <a href="https://myodfw.com/2025-26-sauvie-island-wildlife-area-game-bird-harvest-statistics" target="_blank" rel="noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,222,128,0.5);">ODFW Sauvie Island harvest statistics</a>.
+    </div>
+  </header>
+  <main>
+    <div class="layout">
+      <section class="panel" id="east-panel">
+        <div class="panel-header">
+          <div class="panel-title">Eastside <span class="badge" id="east-days"></span></div>
+          <div class="panel-meta">
+            <span>Ranked by 3-day ducks per hunter</span>
+            <span id="east-count"></span>
+          </div>
+        </div>
+        <div class="blinds-list" id="eastside"></div>
+      </section>
+      <section class="panel" id="west-panel">
+        <div class="panel-header">
+          <div class="panel-title">Westside <span class="badge" id="west-days"></span></div>
+          <div class="panel-meta">
+            <span>Ranked by 3-day ducks per hunter</span>
+            <span id="west-count"></span>
+          </div>
+        </div>
+        <div class="blinds-list" id="westside"></div>
+      </section>
+    </div>
+  </main>
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch('blinds_data.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('Failed to load blinds_data.json');
+        const data = await res.json();
+        renderAll(data);
+      } catch (err) {
+        console.error(err);
+        document.querySelectorAll('.blinds-list').forEach(function(list) {
+          list.innerHTML = '<div class="empty-state"><strong>Unable to load data.</strong> Ensure blinds_data.json is present and open via a local web server.</div>';
+        });
+      }
+    }
+    function formatDate(iso) {
+      var p = iso.split('-');
+      return p[1] + '/' + p[2] + '/' + p[0].slice(2);
+    }
+    function renderAll(data) {
+      var dateLabel = (data.dates && data.dates.length) ? data.dates.map(formatDate).join(' \u00b7 ') : 'No dates';
+      document.getElementById('east-days').textContent = dateLabel;
+      document.getElementById('west-days').textContent = dateLabel;
+      renderSide('eastside', data.eastside || [], 'east-count');
+      renderSide('westside', data.westside || [], 'west-count');
+    }
+    function renderSide(containerId, blinds, countId) {
+      var container = document.getElementById(containerId);
+      container.innerHTML = '';
+      if (!blinds.length) {
+        container.innerHTML = '<div class="empty-state"><strong>No blinds found.</strong></div>';
+        if (countId) document.getElementById(countId).textContent = '0 blinds';
+        return;
+      }
+      if (countId) document.getElementById(countId).textContent = blinds.length + ' blinds';
+      blinds.forEach(function(blind, index) {
+        var wrapper = document.createElement('article');
+        wrapper.className = 'blind';
+        var header = document.createElement('button');
+        header.className = 'blind-header';
+        header.innerHTML = '<div class="blind-rank">' + String(index + 1).padStart(2, ' ') + '</div><div class="blind-name">' + blind.blind + '</div><div class="blind-metrics"><div><strong>' + blind.ducksPerHunter.toFixed(1) + '</strong> ducks / hunter</div><div>' + blind.totalDucks + ' ducks \u00b7 ' + blind.totalHunters + ' hunters</div></div><span class="blind-arrow">\u203a</span>';
+        var panel = document.createElement('div');
+        panel.className = 'blind-panel';
+        var dailySorted = blind.daily.slice().sort(function(a,b) { return a.date.localeCompare(b.date); });
+        var rows = dailySorted.map(function(d) {
+          return '<tr><td>' + formatDate(d.date) + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td></tr>';
+        }).join('');
+        panel.innerHTML = '<div class="daily-meta"><div class="daily-title">Daily breakdown</div><div class="daily-summary">' + blind.daily.length + ' day(s) from latest reports.</div></div><table><thead><tr><th>Date</th><th>Hunters</th><th>Ducks</th><th>Ducks/Hunter</th></tr></thead><tbody>' + rows + '</tbody></table>';
+        header.addEventListener('click', function() {
+          wrapper.classList.toggle('open');
+          if (wrapper.classList.contains('open')) {
+            container.querySelectorAll('.blind.open').forEach(function(el) { if (el !== wrapper) el.classList.remove('open'); });
+          }
+        });
+        wrapper.appendChild(header);
+        wrapper.appendChild(panel);
+        container.appendChild(wrapper);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', loadData);
+  </script>
+</body>
+</html>
+"""
+
 
 if __name__ == "__main__":
     main()
