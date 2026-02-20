@@ -552,6 +552,8 @@ def get_index_html():
       border-bottom: 1px solid rgba(210,210,215,0.8);
     }
     .section-heading:first-of-type { margin-top: 0.35rem; }
+    .section-heading-link { color: inherit; text-decoration: none; }
+    .section-heading-link:hover { color: var(--accent); text-decoration: underline; }
     .blinds-list.section-list { max-height: none; }
   </style>
 </head>
@@ -577,9 +579,9 @@ def get_index_html():
             <span id="east-count"></span>
           </div>
         </div>
-        <h2 class="section-heading">Unit summaries</h2>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/EastUnits.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Unit summaries</a></h2>
         <div class="blinds-list section-list" id="eastside-summary"></div>
-        <h2 class="section-heading">Blind summaries</h2>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/BlindsEast.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Blind summaries</a></h2>
         <div class="blinds-list" id="eastside-units"></div>
       </section>
       <section class="panel" id="west-panel">
@@ -590,9 +592,9 @@ def get_index_html():
             <span id="west-count"></span>
           </div>
         </div>
-        <h2 class="section-heading">Unit summaries</h2>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/WestUnits.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Unit summaries</a></h2>
         <div class="blinds-list section-list" id="westside-summary"></div>
-        <h2 class="section-heading">Blind summaries</h2>
+        <h2 class="section-heading"><a href="http://www.dfw.state.or.us/resources/hunting/waterfowl/sauvie/docs/BlindsWest.pdf" target="_blank" rel="noreferrer noopener" class="section-heading-link">Blind summaries</a></h2>
         <div class="blinds-list" id="westside-units"></div>
       </section>
     </div>
