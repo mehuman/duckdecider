@@ -225,6 +225,7 @@ def main():
 
     # Discover the latest 3 daily harvest PDFs from the ODFW page
     pdf_infos = get_latest_pdf_urls(3)  # list of (url, iso_date)
+    pdf_by_date = { date_label: url for url, date_label in pdf_infos }
     for url, date_label in pdf_infos:
         used_dates.add(date_label)
         filename = url.rsplit("/", 1)[-1]
@@ -328,6 +329,7 @@ def main():
         "source": "latest 3 daily harvest reports from ODFW",
         "dates": dates,
         "weatherByDate": weather_by_date,
+        "pdfByDate": pdf_by_date,
         "eastsideSummary": eastside_summary,
         "eastsideUnits": eastside_units,
         "westsideSummary": westside_summary,
@@ -524,6 +526,8 @@ def get_index_html():
     th, td { padding: 0.25rem 0.35rem; text-align: right; font-variant-numeric: tabular-nums; }
     th:first-child, td:first-child { text-align: left; }
     td.weather-cell { font-size: 0.72rem; color: var(--muted); }
+    .date-link { color: var(--accent); text-decoration: none; }
+    .date-link:hover { text-decoration: underline; }
     th {
       font-size: 0.72rem;
       color: var(--muted);
@@ -573,9 +577,9 @@ def get_index_html():
             <span id="east-count"></span>
           </div>
         </div>
-        <h2 class="section-heading">Blind summaries</h2>
+        <h2 class="section-heading">Unit summaries</h2>
         <div class="blinds-list section-list" id="eastside-summary"></div>
-        <h2 class="section-heading">By unit</h2>
+        <h2 class="section-heading">Blind summaries</h2>
         <div class="blinds-list" id="eastside-units"></div>
       </section>
       <section class="panel" id="west-panel">
@@ -586,9 +590,9 @@ def get_index_html():
             <span id="west-count"></span>
           </div>
         </div>
-        <h2 class="section-heading">Blind summaries</h2>
+        <h2 class="section-heading">Unit summaries</h2>
         <div class="blinds-list section-list" id="westside-summary"></div>
-        <h2 class="section-heading">By unit</h2>
+        <h2 class="section-heading">Blind summaries</h2>
         <div class="blinds-list" id="westside-units"></div>
       </section>
     </div>
@@ -624,16 +628,17 @@ def get_index_html():
       document.getElementById('east-days').textContent = dateLabel;
       document.getElementById('west-days').textContent = dateLabel;
       var weather = data.weatherByDate || {};
-      renderBlindList(document.getElementById('eastside-summary'), data.eastsideSummary || [], weather);
-      renderBlindList(document.getElementById('eastside-units'), data.eastsideUnits || [], weather);
-      renderBlindList(document.getElementById('westside-summary'), data.westsideSummary || [], weather);
-      renderBlindList(document.getElementById('westside-units'), data.westsideUnits || [], weather);
+      var pdfByDate = data.pdfByDate || {};
+      renderBlindList(document.getElementById('eastside-summary'), data.eastsideSummary || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('eastside-units'), data.eastsideUnits || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('westside-summary'), data.westsideSummary || [], weather, pdfByDate);
+      renderBlindList(document.getElementById('westside-units'), data.westsideUnits || [], weather, pdfByDate);
       var es = (data.eastsideSummary || []).length, eu = (data.eastsideUnits || []).length;
       var ws = (data.westsideSummary || []).length, wu = (data.westsideUnits || []).length;
-      document.getElementById('east-count').textContent = es + ' areas, ' + eu + ' units';
-      document.getElementById('west-count').textContent = ws + ' areas, ' + wu + ' units';
+      document.getElementById('east-count').textContent = es + ' units, ' + eu + ' blinds';
+      document.getElementById('west-count').textContent = ws + ' units, ' + wu + ' blinds';
     }
-    function renderBlindList(container, blinds, weatherByDate) {
+    function renderBlindList(container, blinds, weatherByDate, pdfByDate) {
       container.innerHTML = '';
       if (!blinds.length) {
         container.innerHTML = '<div class="empty-state">No entries.</div>';
@@ -650,7 +655,9 @@ def get_index_html():
         var dailySorted = blind.daily.slice().sort(function(a,b) { return a.date.localeCompare(b.date); });
         var rows = dailySorted.map(function(d) {
           var w = formatWeather(weatherByDate[d.date]);
-          return '<tr><td>' + formatDate(d.date) + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td><td class="weather-cell">' + w.temp + '</td><td class="weather-cell">' + w.rain + '</td><td class="weather-cell">' + w.wind + '</td></tr>';
+          var pdfUrl = (pdfByDate && pdfByDate[d.date]) ? pdfByDate[d.date] : '';
+          var dateCell = pdfUrl ? '<a href="' + pdfUrl + '" target="_blank" rel="noreferrer noopener" class="date-link">' + formatDate(d.date) + '</a>' : formatDate(d.date);
+          return '<tr><td>' + dateCell + '</td><td>' + d.hunters + '</td><td>' + d.ducks + '</td><td>' + d.ducksPerHunter.toFixed(1) + '</td><td class="weather-cell">' + w.temp + '</td><td class="weather-cell">' + w.rain + '</td><td class="weather-cell">' + w.wind + '</td></tr>';
         }).join('');
         panel.innerHTML = '<div class="daily-meta"><div class="daily-title">Daily breakdown</div><div class="daily-summary">' + blind.daily.length + ' day(s) from latest reports. Weather: Sauvie Island (Open-Meteo).</div></div><table><thead><tr><th>Date</th><th>Hunters</th><th>Ducks</th><th>Ducks/Hunter</th><th>Temp (Lo/Hi)</th><th>Rain</th><th>Wind</th></tr></thead><tbody>' + rows + '</tbody></table>';
         header.addEventListener('click', function() {
